@@ -34,6 +34,11 @@ export class TicTacToe extends LitElement {
         margin: 4px 2px;
         border-radius: 4px;
         vertical-align: top;
+        border: none;
+      }
+
+      .cell:hover {
+        cursor: pointer;
       }
 
       button {
@@ -143,13 +148,14 @@ export class TicTacToe extends LitElement {
           <div>
             ${row.map(
               (cell, colIdx) => html`
-                <span
+                <button
                   class="cell"
                   @click="${this.handleCellClick}"
                   data-row="${rowIdx}"
                   data-col="${colIdx}"
-                  >${this.convertCellToSymbol(this.board[rowIdx][colIdx])}</span
                 >
+                  ${this.convertCellToSymbol(this.board[rowIdx][colIdx])}
+                </button>
               `,
             )}
           </div>
