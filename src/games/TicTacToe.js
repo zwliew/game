@@ -19,7 +19,6 @@ export class TicTacToe extends LitElement {
       :host {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         height: 100%;
       }
 
@@ -120,7 +119,7 @@ export class TicTacToe extends LitElement {
     return true;
   }
 
-  convertCellToSymbol(cell) {
+  convertPlayerNumToSymbol(cell) {
     switch (cell) {
       case 0:
         return 'X';
@@ -134,9 +133,10 @@ export class TicTacToe extends LitElement {
   render() {
     let winningMessage = '';
     if (this.winner !== null) {
+      const winnerName = this.convertPlayerNumToSymbol(this.winner);
       winningMessage = html`
         <div>
-          <p>Player ${this.winner} won!</p>
+          <p>Player ${winnerName} won!</p>
           <button @click="${this.restartGame}">Restart</button>
         </div>
       `;
@@ -154,7 +154,7 @@ export class TicTacToe extends LitElement {
                   data-row="${rowIdx}"
                   data-col="${colIdx}"
                 >
-                  ${this.convertCellToSymbol(this.board[rowIdx][colIdx])}
+                  ${this.convertPlayerNumToSymbol(this.board[rowIdx][colIdx])}
                 </button>
               `,
             )}

@@ -16,7 +16,23 @@ export class JustGame extends LitElement {
         width: 100%;
         position: fixed;
         bottom: 0;
-        margin-bottom: 8px;
+        padding-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .footer-item {
+        margin-right: 8px;
+      }
+
+      .page-link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .page-link:hover {
+        text-decoration: underline;
       }
     `;
   }
@@ -50,9 +66,20 @@ export class JustGame extends LitElement {
     }
 
     return html`
+      <h1><a href="/" class="page-link">🎮 Just Game! 🎮</a></h1>
       ${page}
       <footer class="footer">
-        Made in Singapore by <a href="https://teeny-thoughts.netlify.app">zwliew</a>.
+        <span class="footer-item">
+          Made in Singapore by
+          <a href="https://teeny-thoughts.netlify.app">zwliew</a>.
+        </span>
+        <iframe
+          src="https://ghbtns.com/github-btn.html?user=zwliew&repo=just-game.netlify.app&type=star&count=true"
+          frameborder="0"
+          scrolling="0"
+          width="170px"
+          height="20px"
+        ></iframe>
       </footer>
     `;
   }
