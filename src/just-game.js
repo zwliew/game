@@ -1,7 +1,7 @@
 import { JustGame } from './JustGame.js';
-import { ContentPage } from './ContentPage';
-import { TicTacToe } from './games/TicTacToe';
-import { SnakeGame } from './games/SnakeGame';
+import { ContentPage } from './ContentPage.js';
+import { TicTacToe } from './games/TicTacToe.js';
+import { SnakeGame } from './games/SnakeGame.js';
 
 customElements.define('just-game', JustGame);
 customElements.define('content-page', ContentPage);

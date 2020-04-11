@@ -4,6 +4,45 @@ import { LitElement, html, css } from 'lit-element';
 const STARTED = 0;
 const ENDED = 1;
 
+function convertPlayerNumToSymbol(cell) {
+  switch (cell) {
+    case 0:
+      return 'X';
+    case 1:
+      return 'O';
+    default:
+      return '';
+  }
+}
+
+function hasPlayerWon(player, board) {
+  const WIN_CONDITIONS = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (const condition of WIN_CONDITIONS) {
+    let won = true;
+    for (const idx of condition) {
+      const row = Math.floor(idx / 3);
+      const col = idx % 3;
+      if (board[row][col] !== player) {
+        won = false;
+        break;
+      }
+    }
+    if (won) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export class TicTacToe extends LitElement {
   static get properties() {
     return {
@@ -70,7 +109,7 @@ export class TicTacToe extends LitElement {
     }
 
     this.board[row][col] = this.curPlayer;
-    const hasWon = this.hasPlayerWon();
+    const hasWon = hasPlayerWon(this.player, this.board);
     if (hasWon) {
       this.gameState = ENDED;
       this.winner = this.curPlayer;
@@ -78,34 +117,6 @@ export class TicTacToe extends LitElement {
       this.gameState = ENDED;
     }
     this.curPlayer = this.curPlayer ? 0 : 1;
-  }
-
-  hasPlayerWon() {
-    const WIN_CONDITIONS = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-    for (const condition of WIN_CONDITIONS) {
-      let won = true;
-      for (const idx of condition) {
-        const row = Math.floor(idx / 3);
-        const col = idx % 3;
-        if (this.board[row][col] !== this.curPlayer) {
-          won = false;
-          break;
-        }
-      }
-      if (won) {
-        return true;
-      }
-    }
-    return false;
   }
 
   isBoardFull() {
@@ -119,21 +130,10 @@ export class TicTacToe extends LitElement {
     return true;
   }
 
-  convertPlayerNumToSymbol(cell) {
-    switch (cell) {
-      case 0:
-        return 'X';
-      case 1:
-        return 'O';
-      default:
-        return '';
-    }
-  }
-
   render() {
     let winningMessage = '';
     if (this.winner !== null) {
-      const winnerName = this.convertPlayerNumToSymbol(this.winner);
+      const winnerName = convertPlayerNumToSymbol(this.winner);
       winningMessage = html`
         <div>
           <p>Player ${winnerName} won!</p>
@@ -154,7 +154,7 @@ export class TicTacToe extends LitElement {
                   data-row="${rowIdx}"
                   data-col="${colIdx}"
                 >
-                  ${this.convertPlayerNumToSymbol(this.board[rowIdx][colIdx])}
+                  ${convertPlayerNumToSymbol(this.board[rowIdx][colIdx])}
                 </button>
               `,
             )}

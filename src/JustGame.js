@@ -74,7 +74,7 @@ export class JustGame extends LitElement {
           <a href="https://teeny-thoughts.netlify.app">zwliew</a>.
         </span>
         <iframe
-          src="https://ghbtns.com/github-btn.html?user=zwliew&repo=just-game.netlify.app&type=star&count=true"
+          src="https://ghbtns.com/github-btn.html?user=zwliew&amp;repo=just-game.netlify.app&amp;type=star&amp;count=true"
           frameborder="0"
           scrolling="0"
           width="170px"
