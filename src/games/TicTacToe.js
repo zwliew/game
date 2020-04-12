@@ -109,14 +109,15 @@ export class TicTacToe extends LitElement {
     }
 
     this.board[row][col] = this.curPlayer;
-    const hasWon = hasPlayerWon(this.player, this.board);
+    const hasWon = hasPlayerWon(this.curPlayer, this.board);
     if (hasWon) {
       this.gameState = ENDED;
       this.winner = this.curPlayer;
     } else if (this.isBoardFull()) {
       this.gameState = ENDED;
+    } else {
+      this.curPlayer = this.curPlayer ? 0 : 1;
     }
-    this.curPlayer = this.curPlayer ? 0 : 1;
   }
 
   isBoardFull() {
@@ -131,6 +132,8 @@ export class TicTacToe extends LitElement {
   }
 
   render() {
+    const player = convertPlayerNumToSymbol(this.curPlayer);
+
     let winningMessage = '';
     if (this.winner !== null) {
       const winnerName = convertPlayerNumToSymbol(this.winner);
@@ -147,7 +150,7 @@ export class TicTacToe extends LitElement {
         html`
           <div>
             ${row.map(
-              (cell, colIdx) => html`
+              (_, colIdx) => html`
                 <button
                   class="cell"
                   @click="${this.handleCellClick}"
@@ -163,7 +166,7 @@ export class TicTacToe extends LitElement {
     );
     return html`
       <h1>Tic-Tac-Toe</h1>
-      ${cells} ${winningMessage}
+      Player ${player}'s turn. ${cells} ${winningMessage}
     `;
   }
 }
