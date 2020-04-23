@@ -18,7 +18,7 @@
     "@open-wc/building-rollup": "0.22.12",
     "@open-wc/demoing-storybook": "2.0.6",
     "@open-wc/eslint-config": "2.0.4",
-    "@open-wc/prettier-config": "0.1.14",
+    "@open-wc/prettier-config": "1.1.0",
     "@open-wc/testing": "2.5.13",
     "@open-wc/testing-karma": "3.3.15",
     "deepmerge": "4.2.2",
