@@ -27,7 +27,7 @@
     "husky": "4.2.5",
     "lint-staged": "10.2.0",
     "rimraf": "3.0.2",
-    "rollup": "2.7.3"
+    "rollup": "2.7.6"
   },
   "eslintConfig": {
     "extends": [
