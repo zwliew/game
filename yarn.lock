@@ -1377,19 +1377,19 @@
     eslint-plugin-no-only-tests "^2.4.0"
     eslint-plugin-wc "^1.2.0"
 
-"@open-wc/karma-esm@^2.13.28":
-  version "2.13.28"
-  resolved "https://registry.yarnpkg.com/@open-wc/karma-esm/-/karma-esm-2.13.28.tgz#17a4551bdc48936df8096ae4bb51b6f1b6855fb5"
-  integrity sha512-Qq77hJRQkRHg2XqBIJQxqslaiz5iqoU1VqkR15NfQsvLEdEpS/2kZBPGQDw08kBw/COhix44F6h6TYBDxY5qrA==
+"@open-wc/karma-esm@^2.14.1":
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/@open-wc/karma-esm/-/karma-esm-2.14.1.tgz#2d0cc1e2955a15d905590dbe8a4b2f54140b126a"
+  integrity sha512-2/UQ0XZRT5wP7y82mm/h8JBANr3aptFolEzrBfzItiwSqHdlG6XjIaOmuRz8RuHI9mYDiU5uxqWqaKPABji3fw==
   dependencies:
-    "@open-wc/building-utils" "^2.16.4"
+    "@open-wc/building-utils" "^2.17.0"
     babel-plugin-istanbul "^5.1.4"
     chokidar "^3.0.0"
     deepmerge "^4.2.2"
-    es-dev-server "^1.47.0"
+    es-dev-server "^1.48.1"
     minimatch "^3.0.4"
     node-fetch "^2.6.0"
-    polyfills-loader "^1.5.6"
+    polyfills-loader "^1.5.7"
     portfinder "^1.0.21"
     request "^2.88.0"
 
@@ -1448,12 +1448,12 @@
   dependencies:
     "@open-wc/scoped-elements" "^1.1.1"
 
-"@open-wc/testing-karma@3.3.17":
-  version "3.3.17"
-  resolved "https://registry.yarnpkg.com/@open-wc/testing-karma/-/testing-karma-3.3.17.tgz#3104083acd843906802eb69959025eb42b8007e7"
-  integrity sha512-dFjXua5/edY7BAWInXF0URxOIDKpyCnU/TUfbZGo2ZDi0ZkSHpeE6sax/bg1T/ymTBWgg1tPqP+IP7he1A7ZGA==
+"@open-wc/testing-karma@3.3.19":
+  version "3.3.19"
+  resolved "https://registry.yarnpkg.com/@open-wc/testing-karma/-/testing-karma-3.3.19.tgz#62bf5268eab9c85c9b6fbb4110607e7c1f1bcb12"
+  integrity sha512-+5fPM/dgc5VZkM6wkGE5Cj3yDeYjOHpic+JsBJ8NUwAnkq4x45me7IB1k5Qtq5F685RGOm5w993/4/2CJbHaSg==
   dependencies:
-    "@open-wc/karma-esm" "^2.13.28"
+    "@open-wc/karma-esm" "^2.14.1"
     "@types/karma" "^5.0.0"
     "@types/karma-coverage-istanbul-reporter" "^2.1.0"
     "@types/karma-mocha" "^1.3.0"
@@ -3882,7 +3882,7 @@ es-abstract@^1.17.0, es-abstract@^1.17.0-next.1, es-abstract@^1.17.2, es-abstrac
     string.prototype.trimleft "^2.1.1"
     string.prototype.trimright "^2.1.1"
 
-es-dev-server@1.48.1:
+es-dev-server@1.48.1, es-dev-server@^1.48.1:
   version "1.48.1"
   resolved "https://registry.yarnpkg.com/es-dev-server/-/es-dev-server-1.48.1.tgz#a65b34087e448d4f4ee12b24de99b2ce51886196"
   integrity sha512-ysChdOsYFUPyHBflDoOBUaInkedP9X2hnuXTy/k+5rtKHiGkCBrZOjps2f4PXUvRIb4zNf3nMeNMTVaRJLX8pw==
