@@ -20,7 +20,7 @@
     "@open-wc/eslint-config": "2.0.6",
     "@open-wc/prettier-config": "1.1.0",
     "@open-wc/testing": "2.5.16",
-    "@open-wc/testing-karma": "3.3.19",
+    "@open-wc/testing-karma": "3.3.20",
     "deepmerge": "4.2.2",
     "es-dev-server": "1.48.1",
     "eslint": "7.0.0",
