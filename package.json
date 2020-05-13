@@ -22,7 +22,7 @@
     "@open-wc/testing": "2.5.16",
     "@open-wc/testing-karma": "3.3.19",
     "deepmerge": "4.2.2",
-    "es-dev-server": "1.48.1",
+    "es-dev-server": "1.49.0",
     "eslint": "7.0.0",
     "husky": "4.2.5",
     "lint-staged": "10.2.2",
