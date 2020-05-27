@@ -49,19 +49,10 @@ export class JustGame extends LitElement {
     let page;
     switch (this.page) {
       case '/tic-tac-toe':
-        page = html`
-          <tic-tac-toe></tic-tac-toe>
-        `;
-        break;
-      case '/snake':
-        page = html`
-          <snake-game></snake-game>
-        `;
+        page = html` <tic-tac-toe></tic-tac-toe> `;
         break;
       default:
-        page = html`
-          <content-page></content-page>
-        `;
+        page = html` <content-page></content-page> `;
         break;
     }
 

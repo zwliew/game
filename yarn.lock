@@ -3437,7 +3437,7 @@ eslint-module-utils@^2.4.1:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-babel@^5.3.0:
+eslint-plugin-babel@5.3.0, eslint-plugin-babel@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-babel/-/eslint-plugin-babel-5.3.0.tgz#2e7f251ccc249326da760c1a4c948a91c32d0023"
   integrity sha512-HPuNzSPE75O+SnxHIafbW5QB45r2w78fxqwK3HmjqIUoPfPzVrq6rD+CINU3yzoDSzEhUkX07VUphbF73Lth/w==
@@ -3451,7 +3451,7 @@ eslint-plugin-html@^6.0.0:
   dependencies:
     htmlparser2 "^4.1.0"
 
-eslint-plugin-import@^2.18.2:
+eslint-plugin-import@2.20.2, eslint-plugin-import@^2.18.2:
   version "2.20.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.20.2.tgz#91fc3807ce08be4837141272c8b99073906e588d"
   integrity sha512-FObidqpXrR8OnCh4iNsxy+WACztJLXAHBO5hK79T1Hc77PgQZkyDGA5Ag9xAvRpglvLNxhH/zSmZ70/pZ31dHg==
@@ -3469,7 +3469,7 @@ eslint-plugin-import@^2.18.2:
     read-pkg-up "^2.0.0"
     resolve "^1.12.0"
 
-eslint-plugin-lit@^1.2.0:
+eslint-plugin-lit@1.2.0, eslint-plugin-lit@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-lit/-/eslint-plugin-lit-1.2.0.tgz#57ec9c82c1d9fc0477de4d858527ff183c3044c9"
   integrity sha512-Y80R6ajNygpq8HsLzh6oEVPrUR0POP75oYb/kLxHkZe1DhZAZJ29DQiih9SktiFxv1AbZR7vN6p6ab5USe+cyQ==
@@ -3483,7 +3483,7 @@ eslint-plugin-no-only-tests@^2.4.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-no-only-tests/-/eslint-plugin-no-only-tests-2.4.0.tgz#7d565434aa7d16ccc7eea957c391d98f827332ca"
   integrity sha512-azP9PwQYfGtXJjW273nIxQH9Ygr+5/UyeW2wEjYoDtVYPI+WPKwbj0+qcAKYUXFZLRumq4HKkFaoDBAwBoXImQ==
 
-eslint-plugin-wc@^1.2.0:
+eslint-plugin-wc@1.2.0, eslint-plugin-wc@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-wc/-/eslint-plugin-wc-1.2.0.tgz#c47cedfce92823ea9bd5ebbe25121377cdcb55e4"
   integrity sha512-p1Vv8GkiTS8ZNfsmWvNJfKsGwsfCDteo2QsFE53x5DuHN7YDVf36II46DauP3mBCQ9pZnYD8lZyl/uz3qBtwQw==

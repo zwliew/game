@@ -5,9 +5,7 @@ import '../src/just-game.js';
 describe('JustGame', () => {
   let element;
   beforeEach(async () => {
-    element = await fixture(html`
-      <just-game></just-game>
-    `);
+    element = await fixture(html` <just-game></just-game> `);
   });
 
   it('renders a h1', () => {

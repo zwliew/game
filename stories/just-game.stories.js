@@ -5,7 +5,4 @@ export default {
   title: 'just-game',
 };
 
-export const App = () =>
-  html`
-    <just-game></just-game>
-  `;
+export const App = () => html` <just-game></just-game> `;
