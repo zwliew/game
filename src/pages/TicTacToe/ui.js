@@ -1,16 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
-import { INIT_STATE, play, ENDED } from './game.js';
-
-function convertPlayerNumToSymbol(cell) {
-  switch (cell) {
-    case 0:
-      return 'X';
-    case 1:
-      return 'O';
-    default:
-      return '';
-  }
-}
+import { init, ENDED } from './game.js';
+import '@material/mwc-switch';
+import '@material/mwc-formfield';
 
 export class TicTacToe extends LitElement {
   static get properties() {
@@ -19,6 +10,8 @@ export class TicTacToe extends LitElement {
       gameState: { type: Number },
       winner: { type: Number },
       curPlayer: { type: Number },
+      ai: { type: Boolean },
+      players: { type: Array },
     };
   }
 
@@ -54,35 +47,38 @@ export class TicTacToe extends LitElement {
     `;
   }
 
-  updateState({ board, gameState, winner, curPlayer }) {
+  updateState({ board, gameState, winner, curPlayer, players }) {
     this.board = board;
     this.gameState = gameState;
     this.winner = winner;
     this.curPlayer = curPlayer;
-    this.state = { board, gameState, winner, curPlayer };
+    this.players = players;
+    this.state = { board, gameState, winner, curPlayer, players };
   }
 
   constructor() {
     super();
 
-    this.updateState(INIT_STATE);
+    this.restartGame();
+  }
+
+  restartGame() {
+    this.updateState(init(this.ai));
   }
 
   render() {
-    const player = convertPlayerNumToSymbol(this.curPlayer);
-
     let endingMessage = '';
     if (this.gameState === ENDED) {
       let status;
       if (this.winner !== undefined) {
-        status = `Player ${convertPlayerNumToSymbol(this.winner)} won!`;
+        status = `Player ${this.players[this.winner].name} won!`;
       } else {
         status = "It's a tie!";
       }
       endingMessage = html`
         <div>
           <p>${status}</p>
-          <button @click="${() => this.updateState(INIT_STATE)}">Restart</button>
+          <button @click="${this.restartGame}">Restart</button>
         </div>
       `;
     }
@@ -95,18 +91,33 @@ export class TicTacToe extends LitElement {
               (_, colIdx) => html`
                 <button
                   class="cell"
-                  @click="${() => this.updateState(play(this.state, rowIdx, colIdx))}"
+                  @click="${() =>
+                    this.updateState(
+                      this.players[this.curPlayer].hint(this.state, rowIdx, colIdx),
+                    )}"
                 >
-                  ${convertPlayerNumToSymbol(this.board[rowIdx][colIdx])}
+                  ${this.board[rowIdx][colIdx]}
                 </button>
               `,
             )}
           </div>
         `,
     );
+
     return html`
       <h1>Tic-Tac-Toe</h1>
-      Player ${player}'s turn. ${board} ${endingMessage}
+      <div>
+        <mwc-formfield label="${this.ai ? 'vs AI' : 'vs human'}">
+          <mwc-switch
+            ?checked=${this.ai}
+            @change="${() => {
+              this.ai = !this.ai;
+              this.restartGame();
+            }}"
+          ></mwc-switch>
+        </mwc-formfield>
+      </div>
+      Player ${this.players[this.curPlayer].name}'s turn. ${board} ${endingMessage}
     `;
   }
 }

@@ -58,6 +58,9 @@
   "author": "just-game",
   "license": "MIT",
   "dependencies": {
+    "@material/mwc-formfield": "0.15.0",
+    "@material/mwc-list": "0.15.0",
+    "@material/mwc-switch": "0.15.0",
     "lit-element": "2.3.1",
     "lit-html": "1.2.1",
     "pwa-helpers": "0.9.1"
