@@ -8,20 +8,21 @@ export class AdvancedAiPlayer {
 
   /**
    * Notifies the player of his turn. In the case of the AI, it also makes a move.
+   * Specific to the advanced AI, this player uses minimax to determine the
+   * not-so-but-optimally-enough moves to make.
    *
    * @param {Object} state The current state of the game
    *
    * @returns {Object} The new state of the game
    */
   notify(state) {
-    const otherPlayer =
-      state.players[0].name === this.name ? state.players[1].name : state.players[0].name;
+    const otherPlayer = state.players[1 - state.curPlayer].name;
     const curPlayer = this.name;
 
     function minimax(board, maximizing) {
       const winner = findWinner(board);
       if (winner !== undefined) {
-        return { val: winner === curPlayer ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY };
+        return { val: winner === curPlayer ? 1 : -1 };
       }
       if (isBoardFull(board)) {
         return { val: 0 };
@@ -48,7 +49,8 @@ export class AdvancedAiPlayer {
       return best;
     }
 
-    const { row, col } = minimax(state.board, true);
+    const { row, col, val } = minimax(state.board, true);
+    console.log(row, col, val);
     if (row !== undefined && col !== undefined) {
       return this.play(state, this.name, row, col);
     }

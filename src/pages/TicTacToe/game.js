@@ -2,11 +2,13 @@ import { HumanPlayer } from './HumanPlayer.js';
 import { BeginnerAiPlayer } from './BeginnerAiPlayer.js';
 import { AdvancedAiPlayer } from './AdvancedAiPlayer.js';
 import { findWinner, isBoardFull, cloneBoard } from './utils.js';
+import { IntermediateAiPlayer } from './IntermediateAiPlayer.js';
 
 // Game modes
 export const OFFLINE_HUMAN = 0;
-export const BEGINNER_AI = 1;
-export const ADVANCED_AI = 2;
+const BEGINNER_AI = 1;
+const INTERMEDIATE_AI = 2;
+const ADVANCED_AI = 3;
 export const GAME_MODES = [
   {
     id: OFFLINE_HUMAN,
@@ -15,6 +17,10 @@ export const GAME_MODES = [
   {
     id: BEGINNER_AI,
     name: 'Beginner AI',
+  },
+  {
+    id: INTERMEDIATE_AI,
+    name: 'Intermediate AI',
   },
   {
     id: ADVANCED_AI,
@@ -59,7 +65,7 @@ function nextState(state) {
       newState.gameState = ENDED;
       break;
     default:
-      newState.curPlayer = (state.curPlayer + 1) % state.players.length;
+      newState.curPlayer = 1 - state.curPlayer;
       newState = newState.players[newState.curPlayer].notify(newState);
       break;
   }
@@ -118,6 +124,9 @@ export function init(opponentId) {
   switch (opponentId) {
     case BEGINNER_AI:
       opponentPlayer = new BeginnerAiPlayer('O', play);
+      break;
+    case INTERMEDIATE_AI:
+      opponentPlayer = new IntermediateAiPlayer('O', play);
       break;
     case ADVANCED_AI:
       opponentPlayer = new AdvancedAiPlayer('O', play);
