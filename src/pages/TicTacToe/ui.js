@@ -1,17 +1,23 @@
 import { LitElement, html, css } from 'lit-element';
-import { init, ENDED } from './game.js';
-import '@material/mwc-switch';
-import '@material/mwc-formfield';
+import { init, ENDED, OFFLINE_HUMAN, GAME_MODES } from './game.js';
+import '@material/mwc-menu';
+import '@material/mwc-list';
+import '@material/mwc-button';
 
 export class TicTacToe extends LitElement {
   static get properties() {
     return {
+      // Game logic
       board: { type: Array },
       gameState: { type: Number },
       winner: { type: Number },
       curPlayer: { type: Number },
       ai: { type: Boolean },
       players: { type: Array },
+
+      // UI
+      menuOpen: { type: Boolean },
+      opponentId: { type: Number },
     };
   }
 
@@ -41,8 +47,10 @@ export class TicTacToe extends LitElement {
         cursor: pointer;
       }
 
-      button {
-        display: inline-block;
+      .opponent-menu {
+        max-width: 500px;
+        position: relative;
+        margin: 0 auto;
       }
     `;
   }
@@ -59,11 +67,16 @@ export class TicTacToe extends LitElement {
   constructor() {
     super();
 
-    this.restartGame();
+    this.updateOpponent(OFFLINE_HUMAN);
   }
 
   restartGame() {
-    this.updateState(init(this.ai));
+    this.updateState(init(this.opponentId));
+  }
+
+  updateOpponent(opponentId) {
+    this.opponentId = opponentId;
+    this.restartGame();
   }
 
   render() {
@@ -78,7 +91,7 @@ export class TicTacToe extends LitElement {
       endingMessage = html`
         <div>
           <p>${status}</p>
-          <button @click="${this.restartGame}">Restart</button>
+          <mwc-button @click="${this.restartGame}" raised>Restart</mwc-button>
         </div>
       `;
     }
@@ -104,18 +117,37 @@ export class TicTacToe extends LitElement {
         `,
     );
 
+    const gameModes = GAME_MODES.flatMap(
+      ({ id, name }) => html`
+        <mwc-list-item ?selected="${this.opponentId === id}" ?activated="${this.opponentId === id}"
+          >${name}</mwc-list-item
+        >
+      `,
+    );
+
     return html`
       <h1>Tic-Tac-Toe</h1>
-      <div>
-        <mwc-formfield label="${this.ai ? 'vs AI' : 'vs human'}">
-          <mwc-switch
-            ?checked=${this.ai}
-            @change="${() => {
-              this.ai = !this.ai;
-              this.restartGame();
-            }}"
-          ></mwc-switch>
-        </mwc-formfield>
+      <div class="opponent-menu">
+        <mwc-button
+          @click="${() => {
+            this.menuOpen = !this.menuOpen;
+          }}"
+          >${GAME_MODES[this.opponentId].name}</mwc-button
+        >
+        <mwc-menu
+          activatable
+          ?open="${this.menuOpen}"
+          @open="${() => {
+            this.menuOpen = true;
+          }}"
+          @closed="${() => {
+            this.menuOpen = false;
+          }}"
+          @selected="${event => {
+            this.updateOpponent(event.detail.index);
+          }}"
+          >${gameModes}</mwc-menu
+        >
       </div>
       Player ${this.players[this.curPlayer].name}'s turn. ${board} ${endingMessage}
     `;

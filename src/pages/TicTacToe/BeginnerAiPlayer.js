@@ -1,4 +1,4 @@
-export class AiPlayer {
+export class BeginnerAiPlayer {
   constructor(name, play) {
     this.name = name;
     this.play = play;

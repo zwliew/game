@@ -1,5 +1,26 @@
 import { HumanPlayer } from './HumanPlayer.js';
-import { AiPlayer } from './AiPlayer.js';
+import { BeginnerAiPlayer } from './BeginnerAiPlayer.js';
+import { AdvancedAiPlayer } from './AdvancedAiPlayer.js';
+import { findWinner, isBoardFull, cloneBoard } from './utils.js';
+
+// Game modes
+export const OFFLINE_HUMAN = 0;
+export const BEGINNER_AI = 1;
+export const ADVANCED_AI = 2;
+export const GAME_MODES = [
+  {
+    id: OFFLINE_HUMAN,
+    name: 'Offline human',
+  },
+  {
+    id: BEGINNER_AI,
+    name: 'Beginner AI',
+  },
+  {
+    id: ADVANCED_AI,
+    name: 'Advanced AI',
+  },
+];
 
 // Game states
 export const ENDED = 0;
@@ -20,47 +41,11 @@ function nextState(state) {
   let boardState;
 
   // Is the game over yet?
-  const WIN_CONDITIONS = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-  for (const condition of WIN_CONDITIONS) {
-    let won = true;
-    for (const idx of condition) {
-      const row = Math.floor(idx / 3);
-      const col = idx % 3;
-      if (state.board[row][col] !== state.players[state.curPlayer].name) {
-        won = false;
-        break;
-      }
-    }
-
-    if (won) {
-      boardState = WON;
-      break;
-    }
-  }
-
-  // Otherwise, is the game tied?
-  if (boardState === undefined) {
-    let tied = true;
-    for (const row of state.board) {
-      for (const col of row) {
-        if (col === undefined) {
-          tied = false;
-        }
-      }
-    }
-
-    if (tied) {
-      boardState = TIE;
-    }
+  const winner = findWinner(state.board);
+  if (winner !== undefined) {
+    boardState = WON;
+  } else if (isBoardFull(state.board)) {
+    boardState = TIE;
   }
 
   let newState = { ...state };
@@ -102,13 +87,7 @@ export function play(state, playerName, row, col) {
     return state;
   }
 
-  const newBoard = [];
-  for (const curRow of state.board) {
-    newBoard.push(curRow.slice());
-  }
-
-  let newState = { ...state, board: newBoard };
-
+  let newState = { ...state, board: cloneBoard(state.board) };
   newState.board[row][col] = state.players[state.curPlayer].name;
   newState = nextState(newState);
 
@@ -118,11 +97,11 @@ export function play(state, playerName, row, col) {
 /**
  * Returns a newly initialized game state.
  *
- * @param {Boolean} isAi Whether the game is against an AI
+ * @param {Number} opponentId The ID of the opponent to play against.
  *
  * @returns {Object} The newly initialized game state
  */
-export function init(isAi) {
+export function init(opponentId) {
   let state = {
     curPlayer: 0,
     gameState: STARTED,
@@ -132,11 +111,22 @@ export function init(isAi) {
       [undefined, undefined, undefined],
     ],
     winner: undefined,
-    players: [
-      new HumanPlayer('X', play),
-      isAi ? new AiPlayer('O', play) : new HumanPlayer('O', play),
-    ],
+    players: [new HumanPlayer('X', play)],
   };
+
+  let opponentPlayer;
+  switch (opponentId) {
+    case BEGINNER_AI:
+      opponentPlayer = new BeginnerAiPlayer('O', play);
+      break;
+    case ADVANCED_AI:
+      opponentPlayer = new AdvancedAiPlayer('O', play);
+      break;
+    default:
+      opponentPlayer = new HumanPlayer('O', play);
+      break;
+  }
+  state.players.push(opponentPlayer);
 
   state = state.players[state.curPlayer].notify(state);
 
