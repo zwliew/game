@@ -28,12 +28,12 @@ export class Hangman extends LitElement {
   constructor() {
     super();
 
-    this.updateState(init());
+    this.restartGame();
   }
 
-  restartGame(): void {
+  async restartGame(): Promise<void> {
     this.curInput = '';
-    this.updateState(init());
+    this.updateState(await init());
   }
 
   updateState(state: State): void {
