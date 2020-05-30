@@ -16,6 +16,7 @@ export class ContentPage extends LitElement {
       <p>Please select a game to play.</p>
       <mwc-list>
         <a href="/tic-tac-toe" class="page-link"><mwc-list-item>Tic-tac-toe</mwc-list-item></a>
+        <a href="/hangman" class="page-link"><mwc-list-item>Hangman</mwc-list-item></a>
       </mwc-list>
     `;
   }

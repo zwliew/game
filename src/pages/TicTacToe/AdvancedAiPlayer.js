@@ -49,8 +49,7 @@ export class AdvancedAiPlayer {
       return best;
     }
 
-    const { row, col, val } = minimax(state.board, true);
-    console.log(row, col, val);
+    const { row, col } = minimax(state.board, true);
     if (row !== undefined && col !== undefined) {
       return this.play(state, this.name, row, col);
     }

@@ -51,6 +51,9 @@ export class JustGame extends LitElement {
       case '/tic-tac-toe':
         page = html` <tic-tac-toe></tic-tac-toe> `;
         break;
+      case '/hangman':
+        page = html`<hangman-page></hangman-page>`;
+        break;
       default:
         page = html` <content-page></content-page> `;
         break;

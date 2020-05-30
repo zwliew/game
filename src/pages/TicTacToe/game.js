@@ -39,7 +39,7 @@ const TIE = 1;
 /**
  * Advances to the next state given the current state parameters.
  *
- * @param {object} The current state
+ * @param {object} state The current state
  *
  * @returns {object} The new state
  */
@@ -93,11 +93,10 @@ export function play(state, playerName, row, col) {
     return state;
   }
 
-  let newState = { ...state, board: cloneBoard(state.board) };
+  const newState = { ...state, board: cloneBoard(state.board) };
   newState.board[row][col] = state.players[state.curPlayer].name;
-  newState = nextState(newState);
 
-  return newState;
+  return nextState(newState);
 }
 
 /**
