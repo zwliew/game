@@ -1,8 +1,8 @@
-import { LitElement, html, css } from 'lit-element';
-import { init, ENDED, OFFLINE_HUMAN, GAME_MODES } from './game.js';
-import '@material/mwc-menu';
-import '@material/mwc-list';
-import '@material/mwc-button';
+import { LitElement, html, css } from "lit-element";
+import { init, ENDED, OFFLINE_HUMAN, GAME_MODES } from "./game.js";
+import "@material/mwc-menu";
+import "@material/mwc-list";
+import "@material/mwc-button";
 
 export class TicTacToe extends LitElement {
   static get properties() {
@@ -80,7 +80,7 @@ export class TicTacToe extends LitElement {
   }
 
   render() {
-    let endingMessage = '';
+    let endingMessage = "";
     if (this.gameState === ENDED) {
       let status;
       if (this.winner !== undefined) {
@@ -106,23 +106,29 @@ export class TicTacToe extends LitElement {
                   class="cell"
                   @click="${() =>
                     this.updateState(
-                      this.players[this.curPlayer].hint(this.state, rowIdx, colIdx),
+                      this.players[this.curPlayer].hint(
+                        this.state,
+                        rowIdx,
+                        colIdx
+                      )
                     )}"
                 >
                   ${this.board[rowIdx][colIdx]}
                 </button>
-              `,
+              `
             )}
           </div>
-        `,
+        `
     );
 
     const gameModes = GAME_MODES.flatMap(
       ({ id, name }) => html`
-        <mwc-list-item ?selected="${this.opponentId === id}" ?activated="${this.opponentId === id}"
+        <mwc-list-item
+          ?selected="${this.opponentId === id}"
+          ?activated="${this.opponentId === id}"
           >${name}</mwc-list-item
         >
-      `,
+      `
     );
 
     return html`
@@ -143,13 +149,14 @@ export class TicTacToe extends LitElement {
           @closed="${() => {
             this.menuOpen = false;
           }}"
-          @selected="${event => {
+          @selected="${(event) => {
             this.updateOpponent(event.detail.index);
           }}"
           >${gameModes}</mwc-menu
         >
       </div>
-      Player ${this.players[this.curPlayer].name}'s turn. ${board} ${endingMessage}
+      Player ${this.players[this.curPlayer].name}'s turn. ${board}
+      ${endingMessage}
     `;
   }
 }

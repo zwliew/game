@@ -1,11 +1,11 @@
-import { LitElement, html, css } from 'lit-element';
-import '@material/mwc-textfield';
-import '@material/mwc-fab';
-import '@material/mwc-dialog';
-import { init, guess, WON, LOST } from './game.js';
+import { LitElement, html, css } from "lit-element";
+import "@material/mwc-textfield";
+import "@material/mwc-fab";
+import "@material/mwc-dialog";
+import { init, guess, WON, LOST } from "./game.js";
 
 function isInputValid(input) {
-  const ALPHABETS = 'abcdefghijklmnopqrstuvwxyz';
+  const ALPHABETS = "abcdefghijklmnopqrstuvwxyz";
   for (const c of ALPHABETS) {
     if (c === input) {
       return true;
@@ -33,12 +33,12 @@ export class Hangman extends LitElement {
   constructor() {
     super();
 
-    this.curInput = '';
+    this.curInput = "";
     this.updateState(init());
   }
 
   restartGame() {
-    this.curInput = '';
+    this.curInput = "";
     this.updateState(init());
   }
 
@@ -53,27 +53,31 @@ export class Hangman extends LitElement {
   submitGuess() {
     if (isInputValid(this.curInput)) {
       this.updateState(guess(this.state, this.curInput));
-      this.curInput = '';
+      this.curInput = "";
     }
   }
 
   updateInput({ data }) {
-    this.curInput = data === null ? '' : data;
+    this.curInput = data === null ? "" : data;
   }
 
   handleKeyUp({ key }) {
-    if (key === 'Enter') {
+    if (key === "Enter") {
       this.submitGuess();
     }
   }
 
   render() {
-    const displayedGuess = Array.from(this.curGuess).join(' ');
+    const displayedGuess = Array.from(this.curGuess).join(" ");
     let endDialog;
     if (this.gameState === WON || this.gameState === LOST) {
       endDialog = html`
         <mwc-dialog open @closed="${this.restartGame}">
-          <p>${this.gameState === WON ? '🎊 You won! 🎉' : 'You lost. Better luck next time!'}</p>
+          <p>
+            ${this.gameState === WON
+              ? "🎊 You won! 🎉"
+              : "You lost. Better luck next time!"}
+          </p>
           <p>The word was "${this.targetWord}".</p>
           <mwc-button slot="primaryAction" dialogAction="restart">
             Restart

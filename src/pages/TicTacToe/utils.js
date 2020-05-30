@@ -18,7 +18,10 @@ function idxToRowCol(idx) {
 
 export function findNearWin(board, player) {
   function areCoordsEqual(a, b) {
-    return board[a.row][a.col] !== undefined && board[a.row][a.col] === board[b.row][b.col];
+    return (
+      board[a.row][a.col] !== undefined &&
+      board[a.row][a.col] === board[b.row][b.col]
+    );
   }
 
   for (const condition of WIN_CONDITIONS) {

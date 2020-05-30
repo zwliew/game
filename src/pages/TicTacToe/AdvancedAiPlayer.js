@@ -1,4 +1,4 @@
-import { findWinner, isBoardFull, cloneBoard } from './utils.js';
+import { findWinner, isBoardFull, cloneBoard } from "./utils.js";
 
 export class AdvancedAiPlayer {
   constructor(name, play) {

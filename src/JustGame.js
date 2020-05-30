@@ -1,5 +1,5 @@
-import { LitElement, html, css } from 'lit-element';
-import { installRouter } from 'pwa-helpers/router';
+import { LitElement, html, css } from "lit-element";
+import { installRouter } from "pwa-helpers/router";
 
 export class JustGame extends LitElement {
   static get properties() {
@@ -48,10 +48,10 @@ export class JustGame extends LitElement {
   render() {
     let page;
     switch (this.page) {
-      case '/tic-tac-toe':
+      case "/tic-tac-toe":
         page = html` <tic-tac-toe></tic-tac-toe> `;
         break;
-      case '/hangman':
+      case "/hangman":
         page = html`<hangman-page></hangman-page>`;
         break;
       default:

@@ -1,4 +1,4 @@
-import { findNearWin } from './utils.js';
+import { findNearWin } from "./utils.js";
 
 export class IntermediateAiPlayer {
   constructor(name, play) {

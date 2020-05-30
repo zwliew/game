@@ -1,5 +1,5 @@
-import merge from 'deepmerge';
-import { createSpaConfig } from '@open-wc/building-rollup';
+import merge from "deepmerge";
+import { createSpaConfig } from "@open-wc/building-rollup";
 
 const baseConfig = createSpaConfig({
   // use the outputdir option to modify where files are output
@@ -10,12 +10,12 @@ const baseConfig = createSpaConfig({
   legacyBuild: true,
 
   // development mode creates a non-minified build for debugging or development
-  developmentMode: process.env.ROLLUP_WATCH === 'true',
+  developmentMode: process.env.ROLLUP_WATCH === "true",
 
   // set to true to inject the service worker registration into your index.html
   injectServiceWorker: false,
 });
 
 export default merge(baseConfig, {
-  input: './index.html',
+  input: "./index.html",
 });

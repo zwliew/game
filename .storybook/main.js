@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../**/stories/*.stories.{js,mdx}'],
+  stories: ["../**/stories/*.stories.{js,mdx}"],
   esDevServer: {
     // custom es-dev-server options
   },
