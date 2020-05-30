@@ -1,7 +1,12 @@
-import { findWinner, isBoardFull, cloneBoard } from "./utils.js";
+import { findWinner, isBoardFull, cloneBoard } from '../utils.js';
+import { Player, Play } from './Player.js';
+import { State, Board } from '../game.js';
 
-export class AdvancedAiPlayer {
-  constructor(name, play) {
+export class AdvancedAiPlayer implements Player {
+  name: string;
+  play: Play;
+
+  constructor(name: string, play: Play) {
     this.name = name;
     this.play = play;
   }
@@ -15,21 +20,34 @@ export class AdvancedAiPlayer {
    *
    * @returns {Object} The new state of the game
    */
-  notify(state) {
+  notify(state: State): State {
     const otherPlayer = state.players[1 - state.curPlayer].name;
     const curPlayer = this.name;
 
-    function minimax(board, maximizing) {
+    function minimax(
+      board: Board,
+      maximizing: boolean
+    ): { row: number | undefined; col: number | undefined; val: number } {
       const winner = findWinner(board);
       if (winner !== undefined) {
-        return { val: winner === curPlayer ? 1 : -1 };
+        return {
+          val: winner === curPlayer ? 1 : -1,
+          row: undefined,
+          col: undefined,
+        };
       }
       if (isBoardFull(board)) {
-        return { val: 0 };
+        return { val: 0, row: undefined, col: undefined };
       }
 
       const newBoard = cloneBoard(board);
-      let best;
+      let best:
+        | {
+            row: number | undefined;
+            col: number | undefined;
+            val: number;
+          }
+        | undefined;
       for (let row = 0; row < 3; row += 1) {
         for (let col = 0; col < 3; col += 1) {
           if (board[row][col] === undefined) {
@@ -46,7 +64,7 @@ export class AdvancedAiPlayer {
           }
         }
       }
-      return best;
+      return best!;
     }
 
     const { row, col } = minimax(state.board, true);
@@ -57,7 +75,7 @@ export class AdvancedAiPlayer {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  hint(state) {
+  hint(state: State): State {
     return state;
   }
 }

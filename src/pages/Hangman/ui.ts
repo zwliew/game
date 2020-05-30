@@ -1,11 +1,11 @@
-import { LitElement, html, css } from "lit-element";
-import "@material/mwc-textfield";
-import "@material/mwc-fab";
-import "@material/mwc-dialog";
-import { init, guess, WON, LOST } from "./game.js";
+import { LitElement, html, property, TemplateResult } from 'lit-element';
+import '@material/mwc-textfield';
+import '@material/mwc-fab';
+import '@material/mwc-dialog';
+import { init, guess, WON, LOST, State } from './game.js';
 
-function isInputValid(input) {
-  const ALPHABETS = "abcdefghijklmnopqrstuvwxyz";
+function isInputValid(input: string) {
+  const ALPHABETS = 'abcdefghijklmnopqrstuvwxyz';
   for (const c of ALPHABETS) {
     if (c === input) {
       return true;
@@ -15,34 +15,28 @@ function isInputValid(input) {
 }
 
 export class Hangman extends LitElement {
-  static get properties() {
-    return {
-      curInput: { type: String },
-      curGuess: { type: String },
-      targetWord: { type: String },
-      livesLeft: { type: Number },
-      gameState: { type: Number },
-      state: { type: Object },
-    };
-  }
+  // UI
+  @property({ type: String }) curInput = '';
 
-  static get styles() {
-    return css``;
-  }
+  // Game logic
+  @property({ type: String }) curGuess: State['curGuess'] | undefined;
+  @property({ type: String }) targetWord: State['targetWord'] | undefined;
+  @property({ type: Number }) livesLeft: State['livesLeft'] | undefined;
+  @property({ type: Number }) gameState: State['gameState'] | undefined;
+  @property({ type: Object }) state: State | undefined;
 
   constructor() {
     super();
 
-    this.curInput = "";
     this.updateState(init());
   }
 
-  restartGame() {
-    this.curInput = "";
+  restartGame(): void {
+    this.curInput = '';
     this.updateState(init());
   }
 
-  updateState(state) {
+  updateState(state: State): void {
     this.curGuess = state.curGuess;
     this.livesLeft = state.livesLeft;
     this.targetWord = state.targetWord;
@@ -50,33 +44,33 @@ export class Hangman extends LitElement {
     this.state = state;
   }
 
-  submitGuess() {
+  submitGuess(): void {
     if (isInputValid(this.curInput)) {
-      this.updateState(guess(this.state, this.curInput));
-      this.curInput = "";
+      this.updateState(guess(this.state!, this.curInput));
+      this.curInput = '';
     }
   }
 
-  updateInput({ data }) {
-    this.curInput = data === null ? "" : data;
+  updateInput({ data }: { data: string | null }): void {
+    this.curInput = data === null ? '' : data;
   }
 
-  handleKeyUp({ key }) {
-    if (key === "Enter") {
+  handleKeyUp({ key }: KeyboardEvent): void {
+    if (key === 'Enter') {
       this.submitGuess();
     }
   }
 
-  render() {
-    const displayedGuess = Array.from(this.curGuess).join(" ");
+  render(): TemplateResult {
+    const displayedGuess = Array.from(this.curGuess!).join(' ');
     let endDialog;
     if (this.gameState === WON || this.gameState === LOST) {
       endDialog = html`
         <mwc-dialog open @closed="${this.restartGame}">
           <p>
             ${this.gameState === WON
-              ? "🎊 You won! 🎉"
-              : "You lost. Better luck next time!"}
+              ? '🎊 You won! 🎉'
+              : 'You lost. Better luck next time!'}
           </p>
           <p>The word was "${this.targetWord}".</p>
           <mwc-button slot="primaryAction" dialogAction="restart">
@@ -87,7 +81,7 @@ export class Hangman extends LitElement {
     }
 
     const lives = [html`Lives left: `];
-    for (let i = 0; i < this.livesLeft; i += 1) {
+    for (let i = 0; i < this.livesLeft!; i += 1) {
       lives.push(html`❤️`);
     }
 

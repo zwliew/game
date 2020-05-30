@@ -1,3 +1,5 @@
+import { Board } from './game.js';
+
 const WIN_CONDITIONS = [
   [0, 1, 2],
   [3, 4, 5],
@@ -9,15 +11,23 @@ const WIN_CONDITIONS = [
   [2, 4, 6],
 ];
 
-function idxToRowCol(idx) {
+function idxToRowCol(idx: number) {
   return {
     row: Math.floor(idx / 3),
     col: idx % 3,
   };
 }
 
-export function findNearWin(board, player) {
-  function areCoordsEqual(a, b) {
+interface Coordinate {
+  row: number;
+  col: number;
+}
+
+export function findNearWin(
+  board: Board,
+  player: string
+): Coordinate | undefined {
+  function areCoordsEqual(a: Coordinate, b: Coordinate) {
     return (
       board[a.row][a.col] !== undefined &&
       board[a.row][a.col] === board[b.row][b.col]
@@ -51,7 +61,7 @@ export function findNearWin(board, player) {
   return undefined;
 }
 
-export function findWinner(board) {
+export function findWinner(board: Board): string | undefined {
   for (const condition of WIN_CONDITIONS) {
     const rowCol = idxToRowCol(condition[0]);
     const player = board[rowCol.row][rowCol.col];
@@ -70,7 +80,7 @@ export function findWinner(board) {
   return undefined;
 }
 
-export function isBoardFull(board) {
+export function isBoardFull(board: Board): boolean {
   for (const row of board) {
     for (const cell of row) {
       if (cell === undefined) {
@@ -81,7 +91,7 @@ export function isBoardFull(board) {
   return true;
 }
 
-export function cloneBoard(board) {
+export function cloneBoard(board: Board): Board {
   const newBoard = [];
   for (const row of board) {
     newBoard.push(row.slice());

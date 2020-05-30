@@ -1,8 +1,18 @@
-import { HumanPlayer } from "./HumanPlayer.js";
-import { BeginnerAiPlayer } from "./BeginnerAiPlayer.js";
-import { AdvancedAiPlayer } from "./AdvancedAiPlayer.js";
-import { findWinner, isBoardFull, cloneBoard } from "./utils.js";
-import { IntermediateAiPlayer } from "./IntermediateAiPlayer.js";
+import { HumanPlayer } from './players/HumanPlayer.js';
+import { BeginnerAiPlayer } from './players/BeginnerAiPlayer.js';
+import { AdvancedAiPlayer } from './players/AdvancedAiPlayer.js';
+import { findWinner, isBoardFull, cloneBoard } from './utils.js';
+import { IntermediateAiPlayer } from './players/IntermediateAiPlayer.js';
+import { Player } from './players/Player.js';
+
+export type Board = (string | undefined)[][];
+export interface State {
+  board: Board;
+  gameState: number;
+  winner: number | undefined;
+  curPlayer: number;
+  players: Player[];
+}
 
 // Game modes
 export const OFFLINE_HUMAN = 0;
@@ -12,19 +22,19 @@ const ADVANCED_AI = 3;
 export const GAME_MODES = [
   {
     id: OFFLINE_HUMAN,
-    name: "Offline human",
+    name: 'Offline human',
   },
   {
     id: BEGINNER_AI,
-    name: "Beginner AI",
+    name: 'Beginner AI',
   },
   {
     id: INTERMEDIATE_AI,
-    name: "Intermediate AI",
+    name: 'Intermediate AI',
   },
   {
     id: ADVANCED_AI,
-    name: "Advanced AI",
+    name: 'Advanced AI',
   },
 ];
 
@@ -39,11 +49,11 @@ const TIE = 1;
 /**
  * Advances to the next state given the current state parameters.
  *
- * @param {object} state The current state
+ * @param {State} state The current state
  *
- * @returns {object} The new state
+ * @returns {State} The new state
  */
-function nextState(state) {
+function nextState(state: State): State {
   let boardState;
 
   // Is the game over yet?
@@ -76,14 +86,19 @@ function nextState(state) {
 /**
  * Plays the cell at row `row` and column `col` for the current player.
  *
- * @param {object} state The current state.
+ * @param {State} state The current state.
  * @param {String} playerName The name of the current player
  * @param {number} row The row to play at
  * @param {number} col The column to play at
  *
  * @returns {object} The new state
  */
-export function play(state, playerName, row, col) {
+export function play(
+  state: State,
+  playerName: string,
+  row: number,
+  col: number
+): State {
   if (
     state.board[row][col] !== undefined ||
     state.gameState === ENDED ||
@@ -106,8 +121,8 @@ export function play(state, playerName, row, col) {
  *
  * @returns {Object} The newly initialized game state
  */
-export function init(opponentId) {
-  let state = {
+export function init(opponentId: number): State {
+  let state: State = {
     curPlayer: 0,
     gameState: STARTED,
     board: [
@@ -116,22 +131,22 @@ export function init(opponentId) {
       [undefined, undefined, undefined],
     ],
     winner: undefined,
-    players: [new HumanPlayer("X", play)],
+    players: [new HumanPlayer('X', play)],
   };
 
   let opponentPlayer;
   switch (opponentId) {
     case BEGINNER_AI:
-      opponentPlayer = new BeginnerAiPlayer("O", play);
+      opponentPlayer = new BeginnerAiPlayer('O', play);
       break;
     case INTERMEDIATE_AI:
-      opponentPlayer = new IntermediateAiPlayer("O", play);
+      opponentPlayer = new IntermediateAiPlayer('O', play);
       break;
     case ADVANCED_AI:
-      opponentPlayer = new AdvancedAiPlayer("O", play);
+      opponentPlayer = new AdvancedAiPlayer('O', play);
       break;
     default:
-      opponentPlayer = new HumanPlayer("O", play);
+      opponentPlayer = new HumanPlayer('O', play);
       break;
   }
   state.players.push(opponentPlayer);

@@ -3,12 +3,12 @@
   "tags": [
     {
       "name": "just-game",
-      "description": "An application with a title and an action counter",
+      "description": "A collection of web minigames",
       "properties": [
         {
-          "name": "title",
+          "name": "Just Game",
           "type": "String",
-          "description": "The title of your application",
+          "description": "The title of the application",
           "default": "Hey there"
         },
         {

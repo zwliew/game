@@ -1,17 +1,15 @@
-import { LitElement, html, css } from "lit-element";
-import "@material/mwc-list/mwc-list.js";
-import "@material/mwc-list/mwc-list-item.js";
+import { LitElement, html, css, TemplateResult } from 'lit-element';
+import '@material/mwc-list/mwc-list.js';
+import '@material/mwc-list/mwc-list-item.js';
 
 export class ContentPage extends LitElement {
-  static get styles() {
-    return css`
-      .page-link {
-        text-decoration: none;
-      }
-    `;
-  }
+  static styles = css`
+    .page-link {
+      text-decoration: none;
+    }
+  `;
 
-  render() {
+  render(): TemplateResult {
     return html`
       <p>Please select a game to play.</p>
       <mwc-list>

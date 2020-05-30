@@ -1,57 +1,53 @@
-import { LitElement, html, css } from "lit-element";
-import { installRouter } from "pwa-helpers/router";
+import { LitElement, html, css, property, TemplateResult } from 'lit-element';
+import { installRouter } from 'pwa-helpers/router';
 
 export class JustGame extends LitElement {
-  static get properties() {
-    return { page: { type: String } };
-  }
+  @property({ type: String }) page = '/';
 
-  static get styles() {
-    return css`
-      :host {
-        text-align: center;
-      }
+  static styles = css`
+    :host {
+      text-align: center;
+    }
 
-      .footer {
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        padding-bottom: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+    .footer {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      .footer-item {
-        margin-right: 8px;
-      }
+    .footer-item {
+      margin-right: 8px;
+    }
 
-      .page-link {
-        text-decoration: none;
-        color: inherit;
-      }
+    .page-link {
+      text-decoration: none;
+      color: inherit;
+    }
 
-      .page-link:hover {
-        text-decoration: underline;
-      }
-    `;
-  }
+    .page-link:hover {
+      text-decoration: underline;
+    }
+  `;
 
   constructor() {
     super();
 
-    installRouter(({ pathname }) => {
+    installRouter(({ pathname }: { pathname: string }) => {
       this.page = pathname;
     });
   }
 
-  render() {
+  render(): TemplateResult {
     let page;
     switch (this.page) {
-      case "/tic-tac-toe":
+      case '/tic-tac-toe':
         page = html` <tic-tac-toe></tic-tac-toe> `;
         break;
-      case "/hangman":
+      case '/hangman':
         page = html`<hangman-page></hangman-page>`;
         break;
       default:

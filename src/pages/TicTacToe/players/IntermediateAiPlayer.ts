@@ -1,7 +1,12 @@
-import { findNearWin } from "./utils.js";
+import { findNearWin } from '../utils.js';
+import { Player, Play } from './Player.js';
+import { State } from '../game.js';
 
-export class IntermediateAiPlayer {
-  constructor(name, play) {
+export class IntermediateAiPlayer implements Player {
+  name: string;
+  play: Play;
+
+  constructor(name: string, play: Play) {
     this.name = name;
     this.play = play;
   }
@@ -11,11 +16,11 @@ export class IntermediateAiPlayer {
    * Specific to the intermediate AI, this player makes random moves unless it sees
    * an immediate opportunity to block a win or to secure a win.
    *
-   * @param {Object} state The current state of the game
+   * @param {State} state The current state of the game
    *
-   * @returns {Object} The new state of the game
+   * @returns {State} The new state of the game
    */
-  notify(state) {
+  notify(state: State): State {
     let coords = findNearWin(state.board, this.name);
     if (coords !== undefined) {
       return this.play(state, this.name, coords.row, coords.col);
@@ -37,7 +42,7 @@ export class IntermediateAiPlayer {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  hint(state) {
+  hint(state: State): State {
     return state;
   }
 }

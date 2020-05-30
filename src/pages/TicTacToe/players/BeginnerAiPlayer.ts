@@ -1,5 +1,11 @@
-export class BeginnerAiPlayer {
-  constructor(name, play) {
+import { Player, Play } from './Player.js';
+import { State } from '../game.js';
+
+export class BeginnerAiPlayer implements Player {
+  name: string;
+  play: Play;
+
+  constructor(name: string, play: Play) {
     this.name = name;
     this.play = play;
   }
@@ -8,11 +14,11 @@ export class BeginnerAiPlayer {
    * Notifies the player of his turn. In the case of the AI, it also makes a move.
    * Specific to the beginner AI, this player makes random moves all the time.
    *
-   * @param {Object} state The current state of the game
+   * @param {State} state The current state of the game
    *
-   * @returns {Object} The new state of the game
+   * @returns {State} The new state of the game
    */
-  notify(state) {
+  notify(state: State): State {
     let row;
     let col;
     do {
@@ -23,7 +29,7 @@ export class BeginnerAiPlayer {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  hint(state) {
+  hint(state: State): State {
     return state;
   }
 }
