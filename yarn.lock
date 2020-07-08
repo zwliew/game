@@ -1464,10 +1464,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.5.tgz#d3bf891748dcf49a148a4591ef6c16caae4b32ed"
   integrity sha512-ljr9hGQYW3kZY1NmQbmSe4yXvgq3KDRt0FMBOB5OaDWqi4X2WzEsp6SZ02KmVrieNW1cjWlj13pgvcf0towZPw==
 
-"@open-wc/building-rollup@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@open-wc/building-rollup/-/building-rollup-1.3.1.tgz#7e9fa27f2d7de7c5907248eb184b7941b524c3ec"
-  integrity sha512-TN/gGP2fY77S0g8+3A0M3lQ2xsWv2/yADUOvZAQH3PyBj6BcXemTQ1mIhBz6eHhyohAR0D5J61qwQSlHS8P0Lg==
+"@open-wc/building-rollup@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@open-wc/building-rollup/-/building-rollup-1.4.2.tgz#a1459f42be6ff1876681c864ff58e1f3e2fda8c0"
+  integrity sha512-9ZDCrC6RqFQBBLoEyqQI8NBD48LDE5KXL4qAnqjrEXOhsWMmHcgEgIRTN4Jl6wYyvbXOJ1bT8PckR5576gIMHw==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helpers" "^7.9.2"
@@ -1489,6 +1489,7 @@
     deepmerge "^4.2.2"
     magic-string "^0.25.7"
     parse5 "^5.1.1"
+    regenerator-runtime "^0.13.3"
     rollup-plugin-babel "^5.0.0-alpha.1"
     rollup-plugin-terser "^5.2.0"
     rollup-plugin-workbox "^5.0.1"
