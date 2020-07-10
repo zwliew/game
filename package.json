@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@open-wc/building-rollup": "1.4.2",
-    "@open-wc/demoing-storybook": "2.3.9",
+    "@open-wc/demoing-storybook": "2.3.12",
     "@open-wc/eslint-config": "2.0.6",
     "@open-wc/testing": "2.5.19",
     "@open-wc/testing-karma": "3.4.7",

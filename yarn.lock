@@ -1547,10 +1547,10 @@
   resolved "https://registry.yarnpkg.com/@open-wc/dedupe-mixin/-/dedupe-mixin-1.2.18.tgz#2a86672fb3558fe2a2e1c5587dbaa0b485567ef1"
   integrity sha512-1HpblP5edeENi0SKms7B+PKYdxHMBIQpaf0nAgTVsZeYgM9OJ3r9nrK/0MOUBZODAOZ1quvO3wlpuljq2hZPWA==
 
-"@open-wc/demoing-storybook@2.3.9":
-  version "2.3.9"
-  resolved "https://registry.yarnpkg.com/@open-wc/demoing-storybook/-/demoing-storybook-2.3.9.tgz#9eb3f1840357c950bf98fee5bc6382ef8f6b117e"
-  integrity sha512-BMu8dntrdgNznnTmqzCk/aAOf05dHOuC626dedo88+1Wvc1M7bjlGsrX5KY5ztKl8D/SrvV2s2RxSNYqnJIa1Q==
+"@open-wc/demoing-storybook@2.3.12":
+  version "2.3.12"
+  resolved "https://registry.yarnpkg.com/@open-wc/demoing-storybook/-/demoing-storybook-2.3.12.tgz#a281fc32394ae573d3fedc8e19605c61568de44b"
+  integrity sha512-WRmVDNsmBz1XEGkUJ2k2tYO0JZZ9SkiWYDzApls1/pfm4rV8lZGYHemt/JZe9gHu2QNavXxk7rGRgYHvke8ZeA==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/generator" "^7.9.6"
@@ -1568,7 +1568,7 @@
     command-line-args "^5.0.2"
     command-line-usage "^6.1.0"
     deepmerge "^4.2.2"
-    es-dev-server "^1.55.0"
+    es-dev-server "^1.56.1"
     es-module-lexer "^0.3.13"
     fs-extra "^8.1.0"
     glob "^7.1.3"
