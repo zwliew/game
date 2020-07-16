@@ -39,7 +39,7 @@
     "rimraf": "3.0.2",
     "rollup": "2.21.0",
     "tslib": "2.0.0",
-    "typescript": "3.9.6"
+    "typescript": "3.9.7"
   },
   "eslintConfig": {
     "extends": [
