@@ -1601,10 +1601,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.5.tgz#d3bf891748dcf49a148a4591ef6c16caae4b32ed"
   integrity sha512-ljr9hGQYW3kZY1NmQbmSe4yXvgq3KDRt0FMBOB5OaDWqi4X2WzEsp6SZ02KmVrieNW1cjWlj13pgvcf0towZPw==
 
-"@open-wc/building-rollup@1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@open-wc/building-rollup/-/building-rollup-1.4.2.tgz#a1459f42be6ff1876681c864ff58e1f3e2fda8c0"
-  integrity sha512-9ZDCrC6RqFQBBLoEyqQI8NBD48LDE5KXL4qAnqjrEXOhsWMmHcgEgIRTN4Jl6wYyvbXOJ1bT8PckR5576gIMHw==
+"@open-wc/building-rollup@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@open-wc/building-rollup/-/building-rollup-1.5.0.tgz#fe8907fc22ed085e4a068ca067199feab8aeaa3c"
+  integrity sha512-I/v6Q+2TqM8ncwuw3innQqC0Y0T1CdmPX2OJaBTozOvLJz77MCF4U8nhUa2w7wTUKPsI5tg3mjeNOn5feakhig==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helpers" "^7.9.2"
