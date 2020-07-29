@@ -20,7 +20,7 @@
     "@open-wc/demoing-storybook": "2.3.13",
     "@open-wc/eslint-config": "2.0.6",
     "@open-wc/testing": "2.5.19",
-    "@open-wc/testing-karma": "4.0.0",
+    "@open-wc/testing-karma": "4.0.1",
     "@types/node": "14.0.26",
     "@typescript-eslint/eslint-plugin": "3.7.1",
     "@typescript-eslint/parser": "3.7.1",
