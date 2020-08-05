@@ -1712,10 +1712,10 @@
     storybook-addon-markdown-docs "^0.4.1"
     storybook-prebuilt "^1.5.0"
 
-"@open-wc/eslint-config@2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@open-wc/eslint-config/-/eslint-config-2.0.6.tgz#57400e1c6ac51d63e93ce71366ee65543e2152f6"
-  integrity sha512-O+22PyMpsyiXHg9lXDbWBQoDSsBUID0agcAMT6YhLffRqg95TroImj6wKL2BGYic0d1MJv8PdPLBSi2A4J8eeg==
+"@open-wc/eslint-config@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@open-wc/eslint-config/-/eslint-config-2.1.0.tgz#ac1bfa6da934df43c0b45b53bf6f2ea08a90b974"
+  integrity sha512-8qMsWoYP7LRw8C9+svGBx9XTUm10suSAFqn+o6NGrZBCtMJTECtjvu6DVoQKqizey5AZNhtM9bCNQTFGhmfLTg==
   dependencies:
     babel-eslint "^10.0.3"
     eslint "^6.7.2"
