@@ -71,7 +71,7 @@
     "@material/mwc-button": "0.18.0",
     "@material/mwc-dialog": "0.18.0",
     "@material/mwc-fab": "0.18.0",
-    "@material/mwc-list": "0.17.2",
+    "@material/mwc-list": "0.18.0",
     "@material/mwc-menu": "0.18.0",
     "@material/mwc-textfield": "0.18.0",
     "lit-element": "2.3.1",
