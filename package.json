@@ -16,7 +16,7 @@
     "tsc:watch": "tsc --watch"
   },
   "devDependencies": {
-    "@open-wc/building-rollup": "1.6.3",
+    "@open-wc/building-rollup": "1.9.0",
     "@open-wc/demoing-storybook": "2.3.18",
     "@open-wc/eslint-config": "2.1.0",
     "@open-wc/testing": "2.5.21",
