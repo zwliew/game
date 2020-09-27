@@ -1707,10 +1707,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@open-wc/building-rollup@1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@open-wc/building-rollup/-/building-rollup-1.9.0.tgz#f2e6424883f827352319578f5f61fc35256224ee"
-  integrity sha512-bkesNaI0fGnFDz+xKnbgHRO5rFKrt+fnzdxsvbuhrTyZuoeS8RhdlZWY4w3XVcJqIsef+7xVnkhTAzxZndAWXQ==
+"@open-wc/building-rollup@1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@open-wc/building-rollup/-/building-rollup-1.9.1.tgz#878c4b3b3ede2d066434fd9df65c4669f01c2329"
+  integrity sha512-CxOb44Wk5hleqUtHYeFcj1KtAr58gGAOOXIwTf7coU+5wLlQqJrhmxHNm/J2pXUIykgK/TqN5xNOKvxy1ztqBg==
   dependencies:
     "@babel/core" "^7.11.1"
     "@babel/helpers" "^7.10.4"
@@ -1722,9 +1722,9 @@
     "@babel/plugin-transform-modules-systemjs" "^7.10.5"
     "@babel/plugin-transform-runtime" "^7.11.0"
     "@babel/preset-env" "^7.9.0"
-    "@open-wc/building-utils" "^2.18.1"
-    "@open-wc/rollup-plugin-html" "^1.2.3"
-    "@open-wc/rollup-plugin-polyfills-loader" "^1.1.4"
+    "@open-wc/building-utils" "^2.18.2"
+    "@open-wc/rollup-plugin-html" "^1.2.4"
+    "@open-wc/rollup-plugin-polyfills-loader" "^1.1.5"
     "@rollup/plugin-babel" "^5.1.0"
     "@rollup/plugin-node-resolve" "^7.1.1"
     babel-plugin-bundled-import-meta "^0.3.2"
@@ -1847,19 +1847,6 @@
     portfinder "^1.0.21"
     request "^2.88.0"
 
-"@open-wc/rollup-plugin-html@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@open-wc/rollup-plugin-html/-/rollup-plugin-html-1.2.3.tgz#f5666d641551f26253b53466e2173d17a02899d4"
-  integrity sha512-0Xd90QrOHTN8OIlAK+RWdp2SiscRpwWHpootLHVoyz3nUZPy6sjE5W6gGlZHe2Zc59iBs7ai+CecH2RlaqrX2A==
-  dependencies:
-    "@open-wc/building-utils" "^2.18.1"
-    "@types/html-minifier" "^3.5.3"
-    fs-extra "^8.1.0"
-    glob "^7.1.3"
-    html-minifier "^4.0.0"
-    parse5 "^5.1.1"
-    terser "^4.6.7"
-
 "@open-wc/rollup-plugin-html@^1.2.4":
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/@open-wc/rollup-plugin-html/-/rollup-plugin-html-1.2.4.tgz#846fe24229183160c3990fb2043a82a846bc023a"
@@ -1871,14 +1858,6 @@
     glob "^7.1.3"
     html-minifier-terser "^5.1.1"
     parse5 "^5.1.1"
-
-"@open-wc/rollup-plugin-polyfills-loader@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@open-wc/rollup-plugin-polyfills-loader/-/rollup-plugin-polyfills-loader-1.1.4.tgz#fdce9570be1d2823424a46e2a261a5c1a9abe659"
-  integrity sha512-jNUdsmVgSwiRriEzbaeiR8CB3YDyw0Vljt/35A4iluMyNst8S1S0v7aDi0aa6h0MzmC7JRAP6EEpJ2QfjzmY5A==
-  dependencies:
-    "@open-wc/rollup-plugin-html" "^1.2.3"
-    polyfills-loader "^1.7.1"
 
 "@open-wc/rollup-plugin-polyfills-loader@^1.1.5":
   version "1.1.5"
