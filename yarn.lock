@@ -3771,10 +3771,10 @@ es-abstract@^1.17.0, es-abstract@^1.17.0-next.1, es-abstract@^1.17.5:
     string.prototype.trimleft "^2.1.1"
     string.prototype.trimright "^2.1.1"
 
-es-dev-server@1.57.5, es-dev-server@^1.57.5:
-  version "1.57.5"
-  resolved "https://registry.yarnpkg.com/es-dev-server/-/es-dev-server-1.57.5.tgz#67ba31436151b230b3610ebc49cf3004fe216882"
-  integrity sha512-QILo/BBXDLR7mARKrCfqr3xx8MkNF9YB3JGUufOJIEUIat9i2SFVktWD1Al4xqBofxKoqh0t7BY/xn6MzdXJAQ==
+es-dev-server@1.57.7, es-dev-server@^1.57.5:
+  version "1.57.7"
+  resolved "https://registry.yarnpkg.com/es-dev-server/-/es-dev-server-1.57.7.tgz#f85c4ea906be809ad9771f33f895d66a85f0c276"
+  integrity sha512-ph90lCbyTvHsC/zbidIXvCYv+B1ZDzWhgG4RWKVT0FLD7t3LA2Ya8PIVcVWY/iVsYQNrIitPdi4mk/El2mEfkQ==
   dependencies:
     "@babel/core" "^7.11.1"
     "@babel/plugin-proposal-dynamic-import" "^7.10.4"
@@ -3832,7 +3832,7 @@ es-dev-server@1.57.5, es-dev-server@^1.57.5:
     open "^7.0.3"
     parse5 "^5.1.1"
     path-is-inside "^1.0.2"
-    polyfills-loader "^1.7.2"
+    polyfills-loader "^1.7.3"
     portfinder "^1.0.21"
     rollup "^2.7.2"
     strip-ansi "^5.2.0"
@@ -6476,10 +6476,10 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-polyfills-loader@^1.7.2:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/polyfills-loader/-/polyfills-loader-1.7.2.tgz#867fd78d5c782aba1f5404610b61ac821571250f"
-  integrity sha512-MUo8OXTDOVcGOf+WbgLiolS9cJquLQWHh3lAQKCaOxGv8Z43IJmJqmwGa6r/wfOnF4aH3f3WwHXfZAi/JjiAgg==
+polyfills-loader@^1.7.2, polyfills-loader@^1.7.3:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/polyfills-loader/-/polyfills-loader-1.7.3.tgz#fbf1fa1dd2e710999e0a42bfbb7418c8e2c57f5a"
+  integrity sha512-+Gc2MiQ/BDUVJ2uGjKZHK7OnursSVWs1nWi93KodwnkSA+W+oY8yNHZPOm+64vDda9nJXa/XMQqYCAO+RjBadg==
   dependencies:
     "@babel/core" "^7.11.1"
     "@open-wc/building-utils" "^2.18.2"
