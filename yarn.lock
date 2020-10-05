@@ -1854,17 +1854,17 @@
   resolved "https://registry.yarnpkg.com/@open-wc/semantic-dom-diff/-/semantic-dom-diff-0.13.21.tgz#718b9ec5f9a98935fc775e577ad094ae8d8b7dea"
   integrity sha512-BONpjHcGX2zFa9mfnwBCLEmlDsOHzT+j6Qt1yfK3MzFXFtAykfzFjAgaxPetu0YbBlCfXuMlfxI4vlRGCGMvFg==
 
-"@open-wc/semantic-dom-diff@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@open-wc/semantic-dom-diff/-/semantic-dom-diff-0.18.0.tgz#0b9efcb86a7dd0a3460daa8d1cfa81a6056eaac0"
-  integrity sha512-TyW5WwzcKemtoAY+mennsUoy+at+Tw6deO15eTaV6k5IeIpEqPz/0K8QWcXcawpExWVBzmJ+H1rMJLhENj9iUw==
+"@open-wc/semantic-dom-diff@^0.19.0":
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/@open-wc/semantic-dom-diff/-/semantic-dom-diff-0.19.0.tgz#41060ad274e0126dc38599a41227c41543f08e57"
+  integrity sha512-RtkD6Mv7M1KFfHs63wKgjZuLEwNtdx/MGC15mtmcv+/q4wrD0qUca/76pLW+40cicANZV6AnrIwPxTUSR/of0g==
   dependencies:
     "@types/chai" "^4.2.11"
 
-"@open-wc/testing-helpers@^1.8.9":
-  version "1.8.9"
-  resolved "https://registry.yarnpkg.com/@open-wc/testing-helpers/-/testing-helpers-1.8.9.tgz#fdadb5092f7ddf90eb4a0592f3659832306c4ea6"
-  integrity sha512-M7pPOE1tjSW06Kavft4vlQcRf0RGbPeaBqGn57YHYw05XxbY3ZDoJGA8hwaA0jyuLbv8XTwOJwtwHJf6fuRE4w==
+"@open-wc/testing-helpers@^1.8.10":
+  version "1.8.10"
+  resolved "https://registry.yarnpkg.com/@open-wc/testing-helpers/-/testing-helpers-1.8.10.tgz#163a28b4c7df81bd7c1778447b2b60984e556c92"
+  integrity sha512-HMo650TxJUcc8Y6anqNh/ZREQvbsCsRYjB+usApGWGVHjRFShhupHApNptHF3BOCWk5QwjguRWhLDSh2wWLK+A==
   dependencies:
     "@open-wc/scoped-elements" "^1.2.2"
     lit-element "^2.2.1"
@@ -1891,14 +1891,14 @@
     karma-source-map-support "^1.3.0"
     mocha "^6.2.2"
 
-"@open-wc/testing@2.5.27":
-  version "2.5.27"
-  resolved "https://registry.yarnpkg.com/@open-wc/testing/-/testing-2.5.27.tgz#0c6572001b393e58ed2c85cb35d8bfb5701871e2"
-  integrity sha512-Bwabn0C+yL5dOT2A7d4vltvQ4wdLKWxBIXrNp9XSVfuWYX72cfcAVM29K35+uQjcqsQI8/AveBa/y6Q83o2nEw==
+"@open-wc/testing@2.5.29":
+  version "2.5.29"
+  resolved "https://registry.yarnpkg.com/@open-wc/testing/-/testing-2.5.29.tgz#bcad1b218eec006e94aaa2a2f7b0716c6f0de90a"
+  integrity sha512-aSnVHFQdYb7foqk+wyJBhSAigdPDWuP2Q3HO1PM5V0rI7PyW7H46IzdyC+3n2mhOV6ao4QJLnP/cSTZNpflhYg==
   dependencies:
     "@open-wc/chai-dom-equals" "^0.12.36"
-    "@open-wc/semantic-dom-diff" "^0.18.0"
-    "@open-wc/testing-helpers" "^1.8.9"
+    "@open-wc/semantic-dom-diff" "^0.19.0"
+    "@open-wc/testing-helpers" "^1.8.10"
     "@types/chai" "^4.2.11"
     "@types/chai-dom" "^0.0.9"
     "@types/mocha" "^5.0.0"
