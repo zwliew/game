@@ -1681,10 +1681,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@open-wc/building-rollup@1.9.1":
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/@open-wc/building-rollup/-/building-rollup-1.9.1.tgz#878c4b3b3ede2d066434fd9df65c4669f01c2329"
-  integrity sha512-CxOb44Wk5hleqUtHYeFcj1KtAr58gGAOOXIwTf7coU+5wLlQqJrhmxHNm/J2pXUIykgK/TqN5xNOKvxy1ztqBg==
+"@open-wc/building-rollup@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/@open-wc/building-rollup/-/building-rollup-1.9.3.tgz#f23442226766c1dfb6c04b6d5fe449bac9dc14b1"
+  integrity sha512-qzg3IAE6OJ9DenBI3LALiNyyGg1rwqGzp5qF8kVjYEMZnhVZfz5ZSXJ6CpcHQl12BxoRQlfa7sZMt+NvNtqIGQ==
   dependencies:
     "@babel/core" "^7.11.1"
     "@babel/helpers" "^7.10.4"
@@ -1696,9 +1696,9 @@
     "@babel/plugin-transform-modules-systemjs" "^7.10.5"
     "@babel/plugin-transform-runtime" "^7.11.0"
     "@babel/preset-env" "^7.9.0"
-    "@open-wc/building-utils" "^2.18.2"
-    "@open-wc/rollup-plugin-html" "^1.2.4"
-    "@open-wc/rollup-plugin-polyfills-loader" "^1.1.5"
+    "@open-wc/building-utils" "^2.18.3"
+    "@open-wc/rollup-plugin-html" "^1.2.5"
+    "@open-wc/rollup-plugin-polyfills-loader" "^1.1.7"
     "@rollup/plugin-babel" "^5.1.0"
     "@rollup/plugin-node-resolve" "^7.1.1"
     babel-plugin-bundled-import-meta "^0.3.2"
@@ -1712,10 +1712,10 @@
     rollup-plugin-workbox "^5.0.1"
     terser "^4.6.7"
 
-"@open-wc/building-utils@^2.18.2":
-  version "2.18.2"
-  resolved "https://registry.yarnpkg.com/@open-wc/building-utils/-/building-utils-2.18.2.tgz#df8508dae8dac9e8a8c61440edf2275c831878b4"
-  integrity sha512-oE9cG9X4zpqm9OnQ2s+aaK7pAa8v3wt0YJBhZT3RisoKp/Va4kmsNBTjW2LPkHVK5N0VvPYukS3ey8S53e9ssQ==
+"@open-wc/building-utils@^2.18.2", "@open-wc/building-utils@^2.18.3":
+  version "2.18.3"
+  resolved "https://registry.yarnpkg.com/@open-wc/building-utils/-/building-utils-2.18.3.tgz#bfee503586f690641c3d32dce3b6b165ccfbaedf"
+  integrity sha512-qBVCYK31onFyLrzDu2hpCDyQUl01C5iwFQq6NVUf4jisEkDQdsVHWTEYXXUf8ztCMe1o8tHmfe9C68fUYQZBJw==
   dependencies:
     "@babel/core" "^7.11.1"
     "@babel/plugin-syntax-dynamic-import" "^7.8.3"
@@ -1821,25 +1821,25 @@
     portfinder "^1.0.21"
     request "^2.88.0"
 
-"@open-wc/rollup-plugin-html@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@open-wc/rollup-plugin-html/-/rollup-plugin-html-1.2.4.tgz#846fe24229183160c3990fb2043a82a846bc023a"
-  integrity sha512-YhFHFVuIf8RpBWVhrVRaR9JSJssjlAr9muVKAs2Nvvg4hpSP3chE9OB4AXRbGOgno7cdVeeUKbPev12RWty0kg==
+"@open-wc/rollup-plugin-html@^1.2.4", "@open-wc/rollup-plugin-html@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@open-wc/rollup-plugin-html/-/rollup-plugin-html-1.2.5.tgz#d9dc1c5a5c302700287e7abe26c608ba0c47495d"
+  integrity sha512-iW/sP/zLEjRN8DuHgAkUg3A3eOYoMgY+dJs7kiVhpKTLSKA5ETybrPeM4i/VS3q2D2wc3hwhnzvEmc8hN4mFQQ==
   dependencies:
-    "@open-wc/building-utils" "^2.18.2"
+    "@open-wc/building-utils" "^2.18.3"
     "@types/html-minifier" "^3.5.3"
     fs-extra "^8.1.0"
     glob "^7.1.3"
     html-minifier-terser "^5.1.1"
     parse5 "^5.1.1"
 
-"@open-wc/rollup-plugin-polyfills-loader@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@open-wc/rollup-plugin-polyfills-loader/-/rollup-plugin-polyfills-loader-1.1.5.tgz#6f6ae7dca579734ff0db53af1b97aa7befad6861"
-  integrity sha512-10+mMaNrDVJD1Vc7Wmu4IgUxJQ3f99LzMi6h/fGUvVeqnm1/yOAUV3DXaUmAfjw87OwAAZGJSqla+++zURv52A==
+"@open-wc/rollup-plugin-polyfills-loader@^1.1.5", "@open-wc/rollup-plugin-polyfills-loader@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@open-wc/rollup-plugin-polyfills-loader/-/rollup-plugin-polyfills-loader-1.1.7.tgz#4b1e0d1ef29cb351b03d791b891a30099e680653"
+  integrity sha512-Ar1HRmHK8BDGrRGgU20sw8ZgUFyvZhli7Hujy41krPvtqK73N1c9RDjIfeA6CyNGM+DsR/HIGyRyWs12J8OEsg==
   dependencies:
-    "@open-wc/rollup-plugin-html" "^1.2.4"
-    polyfills-loader "^1.7.2"
+    "@open-wc/rollup-plugin-html" "^1.2.5"
+    polyfills-loader "^1.7.4"
 
 "@open-wc/scoped-elements@^1.2.2":
   version "1.2.2"
@@ -6483,6 +6483,27 @@ polyfills-loader@^1.7.2:
   dependencies:
     "@babel/core" "^7.11.1"
     "@open-wc/building-utils" "^2.18.2"
+    "@webcomponents/webcomponentsjs" "^2.4.0"
+    abortcontroller-polyfill "^1.4.0"
+    core-js-bundle "^3.6.0"
+    deepmerge "^4.2.2"
+    dynamic-import-polyfill "^0.1.1"
+    es-module-shims "^0.4.6"
+    intersection-observer "^0.7.0"
+    parse5 "^5.1.1"
+    regenerator-runtime "^0.13.3"
+    resize-observer-polyfill "^1.5.1"
+    systemjs "^6.3.1"
+    terser "^4.6.7"
+    whatwg-fetch "^3.0.0"
+
+polyfills-loader@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/polyfills-loader/-/polyfills-loader-1.7.4.tgz#8de53f7672fcab6dc103a35451a7c5641ceb7ac1"
+  integrity sha512-hF1WXPvH0lOtfTuri2DUlgnsFnYDKl2E2HQ3FyaiulcMnVmtKpEHSKKnQ7O5lvT3DWs4L21mNuWbrmI1iAjFtQ==
+  dependencies:
+    "@babel/core" "^7.11.1"
+    "@open-wc/building-utils" "^2.18.3"
     "@webcomponents/webcomponentsjs" "^2.4.0"
     abortcontroller-polyfill "^1.4.0"
     core-js-bundle "^3.6.0"
