@@ -1647,7 +1647,7 @@
     rollup-plugin-workbox "^5.0.1"
     terser "^4.6.7"
 
-"@open-wc/building-utils@^2.18.2", "@open-wc/building-utils@^2.18.3":
+"@open-wc/building-utils@^2.18.3":
   version "2.18.3"
   resolved "https://registry.yarnpkg.com/@open-wc/building-utils/-/building-utils-2.18.3.tgz#bfee503586f690641c3d32dce3b6b165ccfbaedf"
   integrity sha512-qBVCYK31onFyLrzDu2hpCDyQUl01C5iwFQq6NVUf4jisEkDQdsVHWTEYXXUf8ztCMe1o8tHmfe9C68fUYQZBJw==
@@ -1749,19 +1749,19 @@
     eslint-plugin-no-only-tests "^2.4.0"
     eslint-plugin-wc "^1.2.0"
 
-"@open-wc/karma-esm@^3.0.6":
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/@open-wc/karma-esm/-/karma-esm-3.0.6.tgz#5a64da0d64176989cdb153392b8ea7aaa0a8d2de"
-  integrity sha512-Mn2sW0qGcij3dR9o50h5VCLZFTmxwa33MIn5pAWOonkplsWb0nyUwDgKsxkycaTc0hnOLna2kFbRamWv4+oIJg==
+"@open-wc/karma-esm@^3.0.9":
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/@open-wc/karma-esm/-/karma-esm-3.0.9.tgz#f2bb5c78f69685289718097b8d9cd742acfb07fe"
+  integrity sha512-GzpL/iHVBskZDmKC7cLYLBYzuSoIng7CxyMxp5Ai4VxMSwCVFG+6j/PKLOXVma+EAwwvmq2L5B9tWVbXR34Peg==
   dependencies:
-    "@open-wc/building-utils" "^2.18.2"
+    "@open-wc/building-utils" "^2.18.3"
     babel-plugin-istanbul "^5.1.4"
     chokidar "^3.0.0"
     deepmerge "^4.2.2"
-    es-dev-server "^1.57.5"
+    es-dev-server "^1.57.8"
     minimatch "^3.0.4"
     node-fetch "^2.6.0"
-    polyfills-loader "^1.7.2"
+    polyfills-loader "^1.7.4"
     portfinder "^1.0.21"
     request "^2.88.0"
 
@@ -1814,12 +1814,12 @@
     lit-element "^2.2.1"
     lit-html "^1.0.0"
 
-"@open-wc/testing-karma@4.0.6":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@open-wc/testing-karma/-/testing-karma-4.0.6.tgz#fb4e8723e3a4a4ecb600ea07b815e2ca22f78842"
-  integrity sha512-IFzF74IUnJ8GjQovHqIUV0wK7IucQmsBjiTUrAquuSyRdxAzz6AKpWSfYduUQyBpEZ+yWc3+rnispnXgpz/4gA==
+"@open-wc/testing-karma@4.0.9":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@open-wc/testing-karma/-/testing-karma-4.0.9.tgz#533f4a4eee856d3959ac6348697341c0f89fa5ab"
+  integrity sha512-YFjYddMfrMG1lmtzkk8EuDzMOzobXx+FHcUzPzu1zeKNz9ZCJqlvFjxLjDuhedQgM98oksQ4ibKK0+aNuHZyWQ==
   dependencies:
-    "@open-wc/karma-esm" "^3.0.6"
+    "@open-wc/karma-esm" "^3.0.9"
     "@types/karma" "^5.0.0"
     "@types/karma-coverage-istanbul-reporter" "^2.1.0"
     "@types/karma-mocha" "^1.3.0"
@@ -3722,7 +3722,7 @@ es-abstract@^1.17.0, es-abstract@^1.17.0-next.1, es-abstract@^1.17.5:
     string.prototype.trimleft "^2.1.1"
     string.prototype.trimright "^2.1.1"
 
-es-dev-server@1.57.8, es-dev-server@^1.57.5, es-dev-server@^1.57.8:
+es-dev-server@1.57.8, es-dev-server@^1.57.8:
   version "1.57.8"
   resolved "https://registry.yarnpkg.com/es-dev-server/-/es-dev-server-1.57.8.tgz#5aa107f27066686a75ebf03fed412a7de3d7127d"
   integrity sha512-+zfCy3hH337ktOoHJLcpEIoxRPWAuJA6SjgMFz1ZVV8DYksK/zITrhQbB4SzAkxRNXwJsc+knM29mTTsbwAXHw==
@@ -6482,7 +6482,7 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-polyfills-loader@^1.7.2, polyfills-loader@^1.7.4, polyfills-loader@^1.7.5:
+polyfills-loader@^1.7.4, polyfills-loader@^1.7.5:
   version "1.7.5"
   resolved "https://registry.yarnpkg.com/polyfills-loader/-/polyfills-loader-1.7.5.tgz#a05342a14e18b1e4cadb99adde5275d20da8e196"
   integrity sha512-4OjSRiMsCUiDHxbQLOXPJ/QWXd6tHenBlxwS0qClgV+XZQre6UD8Fh3bSjFfnkRGRsqfrnjT7dFUJxxAFMe1qQ==
