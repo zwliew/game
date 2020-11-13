@@ -69,7 +69,7 @@
   "license": "MIT",
   "dependencies": {
     "@material/mwc-button": "0.18.0",
-    "@material/mwc-dialog": "0.18.0",
+    "@material/mwc-dialog": "0.19.1",
     "@material/mwc-fab": "0.19.1",
     "@material/mwc-list": "0.18.0",
     "@material/mwc-menu": "0.18.0",
