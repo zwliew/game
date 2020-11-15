@@ -1301,18 +1301,7 @@
     lit-element "^2.3.0"
     tslib "^1.10.0"
 
-"@material/mwc-button@0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@material/mwc-button/-/mwc-button-0.18.0.tgz#1b199ecbcc064b9eaf7b6fba4b2b8a7fb13e156a"
-  integrity sha512-TeUcsnTIiAkG8B3Pz4QNgiudbUBY66Yf9tZVHLGEPeKZENtwTbg/C6fMDdxsvEl/nlCrBTcTFaUNeawMIqhTDw==
-  dependencies:
-    "@material/mwc-icon" "^0.18.0"
-    "@material/mwc-ripple" "^0.18.0"
-    lit-element "^2.3.0"
-    lit-html "^1.1.2"
-    tslib "^1.10.0"
-
-"@material/mwc-button@^0.19.1":
+"@material/mwc-button@0.19.1", "@material/mwc-button@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@material/mwc-button/-/mwc-button-0.19.1.tgz#96520d55c265e9c672ecb97b5547a5315cd4ee0d"
   integrity sha512-3aLW2rbV9dp1F9729Uj/2CCY9j6um5OOa9p6uTPOQ29w7Z0u0yvKv2vJ7a/eZlKZUrdR52az4SzsviVPz7918g==
@@ -1366,14 +1355,6 @@
   dependencies:
     "@material/floating-label" "=8.0.0-canary.096a7a066.0"
     lit-html "^1.1.2"
-    tslib "^1.10.0"
-
-"@material/mwc-icon@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@material/mwc-icon/-/mwc-icon-0.18.0.tgz#7164aaac89616241bb924a5a9db668f8c54e04bd"
-  integrity sha512-3tYVi7DqGuL3Rk+iy+O6Mf/yB3Gc70Pf9RKMEXlEbTCilLqKTEDf4qp9RuUMN8QvWBsIH9dBWRvbApItYYgJfA==
-  dependencies:
-    lit-element "^2.3.0"
     tslib "^1.10.0"
 
 "@material/mwc-icon@^0.19.1":
