@@ -1355,15 +1355,15 @@
     tslib "^1.10.0"
     wicg-inert "^3.0.0"
 
-"@material/mwc-fab@0.19.1":
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/@material/mwc-fab/-/mwc-fab-0.19.1.tgz#d0e9f624e9595eae0c71023516bd12e7487ca678"
-  integrity sha512-bgw58dnKZkUUTzTSSzoq8/KbJiXcIoV2qS5Y2L0U/dUONcEyoTOnVATS9cbaHF4Nv+kEVhWH7Zh+pm5e0pjyCw==
+"@material/mwc-fab@0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@material/mwc-fab/-/mwc-fab-0.20.0.tgz#bcd77bd9a6e06855b174944f0267e2b5512fab45"
+  integrity sha512-lxPlber5SxRAzH063IFTQhUj7YRuoi5juvYsSWHDLZUqj7wBTV+m6wX9a14wltcCumMNL80k2lXs9FLUOnZz9Q==
   dependencies:
-    "@material/mwc-ripple" "^0.19.1"
+    "@material/mwc-ripple" "^0.20.0"
     lit-element "^2.3.0"
     lit-html "^1.1.2"
-    tslib "^1.10.0"
+    tslib "^2.0.1"
 
 "@material/mwc-floating-label@^0.20.0":
   version "0.20.0"
